@@ -1,0 +1,12 @@
+{
+	"feedback": [
+		{
+			"score": 10,
+			"comment": "If you can see this comment, the previous feedback sent via this form was stored successfully. Yay! 🥳",
+			"startDate": {
+				"month": "5",
+				"year": "2021"
+			}
+		}
+	]
+}
