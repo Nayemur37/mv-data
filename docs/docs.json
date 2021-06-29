@@ -250,7 +250,7 @@
 					"id": "mv-list-item",
 					"advanced": false,
 					"title": "The mv-list-item attribute",
-					"content": "##### Example\n\n```html\n<table property=\"cat\" mv-list>\n\t<tr property=\"cat\" mv-list-item>\n\t\t<td property=\"name\"></td>\n\t\t<td property=\"age\"></td>\n\t</tr>\n</table>\n```\n\nNote: If there is no `property` attribute on the collection item, one will be added automatically with **the name of the collection container**.\n\nYou could also specify the property name as a value of `mv-list-item`, like so:\n\n##### Example\n\n```html\n<table property=\"cat\" mv-list>\n\t<tr mv-list-item=\"cat\">\n\t\t<td property=\"name\">Adam Catlace</td>\n\t\t<td property=\"age\">4</td>\n\t</tr>\n</table>\n```"
+					"content": "Starting with v0.2.5, to tell Mavo that an element is a collection item and can be multiplied, add `mv-list-item` to it, like so:\n\n##### Example\n\n```html\n<table property=\"cat\" mv-list>\n\t<tr property=\"cat\" mv-list-item>\n\t\t<td property=\"name\"></td>\n\t\t<td property=\"age\"></td>\n\t</tr>\n</table>\n```\n\nNote: If there is no `property` attribute on the collection item, one will be added automatically with **the name of the collection container**. If there is no `mv-list` attribute on the item's parent, either one will be added automatically, or the item will be wrapped with a new element with the `mv-list` attribute.\n\nYou could also specify the property name as a value of `mv-list-item`, like so:\n\n##### Example\n\n```html\n<table property=\"cat\" mv-list>\n\t<tr mv-list-item=\"cat\">\n\t\t<td property=\"name\">Adam Catlace</td>\n\t\t<td property=\"age\">4</td>\n\t</tr>\n</table>\n```"
 				},
 				{
 					"id": "collection-editing-controls",
