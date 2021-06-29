@@ -243,12 +243,14 @@
 				{
 					"id": "mv-list",
 					"advanced": false,
-					"title": "The mv-list attribute"
+					"title": "The mv-list attribute",
+					"content": "##### Example\n\n```html\nHobbies:\n<ul property=\"hobby\" mv-list>\n\t<li property=\"hobby\" mv-list-item>Eating</li>\n</ul>\n```\n\nYou could also specify the property name as a value of `mv-list`, like so:\n\n##### Example\n\n```html\nHobbies:\n<ul  mv-list=\"hobby\">\n\t<li property=\"hobby\" mv-list-item>Eating</li>\n</ul>\n```"
 				},
 				{
 					"id": "mv-list-item",
 					"advanced": false,
-					"title": "The mv-list-item attribute"
+					"title": "The mv-list-item attribute",
+					"content": "##### Example\n\n```html\n<table property=\"cat\" mv-list>\n\t<tr property=\"cat\" mv-list-item>\n\t\t<td property=\"name\">Adam Catlace</td>\n\t\t<td property=\"age\">4</td>\n\t</tr>\n</table>\n```\n\nOr use a value of `mv-list-item` to specify the property name, like so:\n\n##### Example\n\n```html\n<table property=\"cat\" mv-list>\n\t<tr mv-list-item=\"cat\">\n\t\t<td property=\"name\">Adam Catlace</td>\n\t\t<td property=\"age\">4</td>\n\t</tr>\n</table>\n```"
 				},
 				{
 					"id": "collection-editing-controls",
@@ -260,7 +262,7 @@
 					"id": "simple-and-complex-collections",
 					"advanced": false,
 					"title": "Simple and complex collections",
-					"content": "Simple collections are collections of properties **that do not contain other properties.**. In contrast, <def>complex collections</def> are collections of groups, i.e. collections where each item contains multiple properties. There are a few UI differences between these two:\n\n*   In complex collections, the item bar is placed **inside** each item, at the end (unless [customized](/docs/ui/#item-controls)). In simple collections, the item bar is placed **after** each item and has a class of `mv-adjacent` and [a few CSS Variables for positioning that](/docs/#css-variables).\n*   In complex collections, dragging to rearrange is achieved via a handle in the itembar. In simple collections, the whole item is draggable.\n\nTry out the difference below:\n\n##### Example\n\n```html\n<div property=\"complexPerson\" mv-multiple>\n\t<span property=\"firstName\">Lea</span>\n\t<span property=\"lastName\">Verou</span>\n</div>\n\n<div property=\"simplePerson\" mv-multiple>Lea Verou</div>\n```"
+					"content": "Simple collections are collections of properties **that do not contain other properties.**. In contrast, <def>complex collections</def> are collections of groups, i.e. collections where each item contains multiple properties. There are a few UI differences between these two:\n\n*   In complex collections, the item bar is placed **inside** each item, at the end (unless [customized](/docs/ui/#item-controls)). In simple collections, the item bar is placed **after** each item and has a class of `mv-adjacent` and [a few CSS Variables for positioning that](/docs/#css-variables).\n*   In complex collections, dragging to rearrange is achieved via a handle in the itembar. In simple collections, the whole item is draggable.\n\nTry out the difference below:\n\n##### Example\n\n```html\n<div property=\"complexPerson\" mv-multiple>\n\t<span property=\"firstName\">Lea</span>\n\t<span property=\"lastName\">Verou</span>\n</div>\n\n<div property=\"simplePerson\" mv-multiple>Lea Verou</div>\n```\n\n##### Example (starting with v0.2.5)\n\n```html\n<div property=\"complexPerson\" mv-list>\n\t<div property=\"complexPerson\" mv-list-item>\n\t\t<span property=\"firstName\">Lea</span>\n\t\t<span property=\"lastName\">Verou</span>\n\t</div>\n</div>\n\n<div property=\"simplePerson\" mv-list>\n\t<div property=\"simplePerson\" mv-list-item>Lea Verou</div>\n</div>\n```"
 				},
 				{
 					"id": "mv-accepts",
