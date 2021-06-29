@@ -1,0 +1,329 @@
+{
+	"class": [
+		{
+			"name": "mv-autoedit",
+			"on": "Mavo root",
+			"purpose": "Mavo root\tMavo will start in edit mode (no need to click the Edit button). Useful for apps that are almost always in edit mode, but still need a read mode (if read mode is not needed at all, use `mv-mode` instead)."
+		},
+		{
+			"name": "mv-fixed",
+			"on": "Mavo toolbar",
+			"purpose": "Style the toolbar as fixed at the top of the screen (always visible)."
+		},
+		{
+			"name": "mv-logged-in",
+			"purpose": "Only show element to logged in users."
+		},
+		{
+			"name": "mv-logged-out",
+			"purpose": "Only show element to logged out users."
+		}
+	],
+	"coreAttribute": [
+		{
+			"name": "mv-app",
+			"path": "/docs/primer/#mv-app",
+			"link": "Primer",
+			"on": "Mavo root\t",
+			"purpose": "Allows you to assign an id to your app, which is used in a number of places. The element with this attribute is called the **Mavo root**."
+		},
+		{
+			"name": "property",
+			"purpose": "Names elements that will be saved, edited, or used in [expressions](/docs/expressions). Elements with this attribute are called **Properties**.",
+			"path": "/docs/properties",
+			"link": "Properties"
+		},
+		{
+			"name": "mv-storage",
+			"on": "Mavo root, properties",
+			"purpose": "Tells Mavo where data is stored. It’s used on the Mavo root with any of the accepted values or optionally on individual properties to prevent them from being stored (`mv-storage=\"none\"`).",
+			"live": "yes",
+			"path": "/docs/storage",
+			"link": "Storage"
+		},
+		{
+			"name": "typeof",
+			"on": "Properties",
+			"purpose": "The value of this property element is not just an attribute or its text content, but the union of the values of the properties inside it. This is almost always inferred from the structure of your properties and added automatically, but you can use it to force an element to be a group, or to declare the type of the group (e.g. `typeof=\"Person\"`) for better semantic value. Elements with this attribute are called **groups**, objects, or complex properties."
+		},
+		{
+			"name": "mv-multiple",
+			"on": "Properties",
+			"purpose": "Makes elements repeatable. Only has meaning on property elements, if there is no `property` attribute, one will be added automatically with a generated name like \"collection\". Elements with this attribute are called **Collections**.\t\n\n**Note:** Starting with v0.2.5 instead of `mv-multiple` on the item, collections will be specified with `mv-list` and `mv-list-item` attributes on the collection and collection item respectively.",
+			"path": "/docs/collections",
+			"link": "Collections"
+		},
+		{
+			"name": "mv-list",
+			"path": "/docs/collections/#mv-list",
+			"link": "Collections",
+			"purpose": "Starting with v0.2.5 specifies **the container of the collection**. If there is no `property` attribute on the container, one will be added automatically with a generated name like “items”. Elements with this attribute are called **Collections**."
+		},
+		{
+			"name": "mv-list-item",
+			"path": "/docs/collections/#mv-list-item",
+			"link": "Collections",
+			"purpose": "Starting with v0.2.5 tells Mavo that **this element is a collection item** and can be multiplied. If there is no `property` attribute on the collection item, one will be added automatically with the name of the collection container."
+		}
+	],
+	"attribute": [
+		{
+			"name": "mv-attribute",
+			"on": "Properties, elements with `mv-value`",
+			"purpose": "Override the defaults for which attribute holds the data for this element. For no attribute (element content), specify `\"none\"`.",
+			"path": "/docs/properties/#mv-attribute",
+			"link": "Properties"
+		},
+		{
+			"name": "mv-action",
+			"purpose": "Run an action that modifies the data when an element is clicked or a form is submitted.",
+			"live": "expressions",
+			"path": "/docs/actions",
+			"link": "Actions"
+		},
+		{
+			"name": "mv-source",
+			"on": "Mavo root",
+			"purpose": "If specified, it is used instead of `mv-storage` for loading data. Useful when you want to read from one location and write to a different location. Same values as `mv-storage`.",
+			"live": "yes",
+			"path": "/docs/storage",
+			"link": "Storage"
+		},
+		{
+			"name": "mv-init",
+			"on": "Mavo root",
+			"purpose": "If no data is stored, `mv-init` will be used to load initial data. Same values as `mv-storage`.",
+			"live": "yes",
+			"path": "/docs/storage",
+			"link": "Storage"
+		},
+		{
+			"name": "mv-default",
+			"on": "Properties",
+			"purpose": "Sets the default value. If no value, the default value becomes the property content.",
+			"live": "yes",
+			"path": "/docs/properties/#mv-default",
+			"link": "Properties"
+		},
+		{
+			"name": "mv-order",
+			"on": "Collections",
+			"purpose": "Values: `desc` or `asc`. Controls the order that new items are added to collections.",
+			"path": "/docs/collections/#mv-order",
+			"link": "Collections"
+		},
+		{
+			"name": "mv-expressions",
+			"purpose": "Change the expression syntax or disable [expressions](/docs/expressions) altogether.",
+			"path": "/docs/expressions#using-expressions",
+			"link": "Expressions"
+		},
+		{
+			"name": "mv-expressions-ignore",
+			"purpose": "Disable expressions on specific attributes",
+			"path": "/docs/expressions#disabling-expressions",
+			"link": "Expressions"
+		},
+		{
+			"name": "mv-value",
+			"purpose": "Set an element's content to the result of an [expressions](/docs/expressions/#providing-fallbacks-the-mv-value-attribute).",
+			"live": "expressions",
+			"path": "/docs/expressions/#providing-fallbacks-the-mv-value-attribute",
+			"link": "Expressions"
+		},
+		{
+			"name": "mv-if",
+			"purpose": "Remove an element from the DOM if the expression doesn't match and re-add it when it does.",
+			"live": "expressions",
+			"path": "/docs/expressions/#conditionals-if-and-the-mv-if-attribute",
+			"link": "Expressions"
+		},
+		{
+			"name": "mv-accepts",
+			"on": "Collections",
+			"purpose": "Property names (space separated) of other collections that can move items to this one.",
+			"path": "/docs/collections/#mv-accepts",
+			"link": "Collections"
+		},
+		{
+			"name": "mv-editor",
+			"on": "Properties",
+			"purpose": "Customize how an element is edited by linking to another element, anywhere in the page.",
+			"live": "initially",
+			"path": "/docs/properties/#mv-editor",
+			"link": "Properties"
+		},
+		{
+			"name": "mv-editor-*",
+			"on": "Properties",
+			"purpose": "Any attributes set this way will be copied over to the property's editor.",
+			"live": "initially",
+			"path": "/docs/properties/#mv-editor-star",
+			"link": "Properties"
+		},
+		{
+			"name": "mv-edit-type",
+			"on": "Properties",
+			"purpose": "Customize whether a property is edited via a popup or not.",
+			"path": "/docs/properties/#mv-edit-type",
+			"link": "Properties"
+		},
+		{
+			"name": "mv-mode",
+			"purpose": "Control whether a property is in read or edit mode independently of the mode of the rest of the Mavo app.",
+			"live": "yes",
+			"path": "/docs/properties/#mv-mode",
+			"link": "Properties"
+		},
+		{
+			"name": "mv-format",
+			"on": "Mavo root",
+			"purpose": "Declare the data format, if not JSON and if it cannot be determined from your data URL.",
+			"live": "initially",
+			"path": "/docs/formats",
+			"link": "Formats"
+		},
+		{
+			"name": "mv-autosave",
+			"on": "Mavo root",
+			"purpose": "Save automatically when the data changes, either immediately or at most every N seconds.",
+			"live": "initially",
+			"path": "/docs/storage/#autosave",
+			"link": "Storage"
+		},
+		{
+			"name": "mv-bar",
+			"on": "Mavo root",
+			"purpose": "Control which buttons may appear in the toolbar and in what order, or hide the toolbar completely.",
+			"path": "/docs/ui/#bar",
+			"link": "UI-Customization"
+		},
+		{
+			"name": "mv-path",
+			"on": "Properties",
+			"purpose": "Render and edit only a subset of the remote data, by providing a (slash-separated) path to the data it handles.",
+			"live": "initially"
+		},
+		{
+			"name": "mv-multiple-path",
+			"on": "Collections",
+			"purpose": "Same as `mv-path` but applies to the collection itself, not the item(s)."
+		},
+		{
+			"name": "mv-alias",
+			"on": "Properties",
+			"purpose": "If provided, Mavo will read data from this property **instead** of its real property name. Useful to read stored data properly after renaming a property in the HTML.",
+			"path": "/docs/migration/#mv-alias",
+			"link": "Migration"
+		},
+		{
+			"name": "mv-initial-items",
+			"on": "Collections",
+			"purpose": "How many items should the collection start with? If not provided, it is 1, unless `mv-like` is also specified, in which case it's 0 (to prevent infinite recursion)."
+		},
+		{
+			"name": "mv-uploads",
+			"on": "Mavo root",
+			"purpose": "Provide different upload backend than storage backend.",
+			"live": "yes",
+			"path": "https://mavo.io/docs/storage#uploads",
+			"link": "Storage"
+		},
+		{
+			"name": "mv-upload-path",
+			"on": "Properties",
+			"purpose": "Sets the local path for uploads. Mandatory to enable uploads on `<a>` and `<link>`.",
+			"path": "/docs/storage#uploads",
+			"link": "Storage"
+		},
+		{
+			"name": "mv-upload-url",
+			"purpose": "Sets the URL for serving uploaded resources from.",
+			"path": "/docs/storage#uploads",
+			"link": "Storage"
+		},
+		{
+			"name": "aria-label",
+			"on": "Simple properties",
+			"purpose": "Sets or contains the label the property will use during editing.",
+			"live": "yes"
+		}
+	],
+	"generatedAttribute": [
+		{
+			"name": "mv-progress",
+			"on": "Mavo root",
+			"purpose": "Only set when an event is in progress. Its value reflects what event, e.g. `\"Saving\"` or `\"Loading\"`."
+		},
+		{
+			"name": "mv-clicked",
+			"on": "Properties that are `<button>` elements or have a `counter` class.",
+			"purpose": "The number of times the button has been clicked."
+		},
+		{
+			"name": "mv-permissions",
+			"on": "Mavo root",
+			"purpose": "Space-separated list of permissions (read, edit, add, delete, login, logout, save)"
+		},
+		{
+			"name": "mv-mode",
+			"on": "Any property",
+			"purpose": "`mv-mode=\"edit\"` is applied on every property when it’s being edited."
+		}
+	],
+	"generatedClass": [
+		{
+			"name": "mv-target-within",
+			"on": "Any element that matches the CSS `:target` pseudo-class or contains an element that does."
+		},
+		{
+			"name": "mv-ui",
+			"on": "Any (usually generated) controls for triggering Mavo-related actions"
+		},
+		{
+			"name": "mv-empty",
+			"on": "Properties with no value"
+		},
+		{
+			"name": "mv-deleted",
+			"on": "Collection items that have been deleted but the deletion is not yet saved"
+		},
+		{
+			"name": "mv-item-bar",
+			"on": "Buttons on collection items for deleting, adding, rearranging."
+		},
+		{
+			"name": "mv-highlight",
+			"on": "Highlighted collection items (e.g. when hovering over the delete button)"
+		},
+		{
+			"name": "mv-bar",
+			"on": "Mavo toolbar"
+		},
+		{
+			"name": "mv-editor",
+			"on": "Element used for editing a property"
+		},
+		{
+			"name": "mv-popup",
+			"on": "Generated popup for editing an attribute."
+		}
+	],
+	"cssVariable": [
+		{
+			"name": "--mv-mode",
+			"value": "`read` or `edit`",
+			"on": "Elements with the `mv-mode` attribute"
+		},
+		{
+			"name": "--mv-loader",
+			"on": "Mavo root",
+			"value": "data URI of Mavo loader (the three animated dots)"
+		},
+		{
+			"name": "--mv-rubbish-bin",
+			"on": "Mavo root",
+			"value": "data URI of Mavo rubbish bin icon"
+		}
+	]
+}
